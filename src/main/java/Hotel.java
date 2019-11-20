@@ -37,4 +37,14 @@ public class Hotel {
         Booking newBooking = new Booking(durationOfStay, bedroom);
         return newBooking;
     }
+
+    public ArrayList vacantBedrooms(){
+        ArrayList<Bedroom> emptyRooms = new ArrayList<Bedroom>();
+        for(Bedroom bedroom :this.bedrooms){
+            if (bedroom.guestCount() == 0){
+                emptyRooms.add(bedroom);
+            }
+        }
+        return emptyRooms;
+    }
 }

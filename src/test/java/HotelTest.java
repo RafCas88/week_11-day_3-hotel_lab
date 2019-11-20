@@ -73,4 +73,10 @@ public class HotelTest {
         Booking newBooking = hotel.bookRoom(3, bedroom1);
         assertEquals(3, newBooking.hasDurationOfStay());
     }
+
+    @Test
+    public void canListsEmptyRooms(){
+       ArrayList<Bedroom> emptyBedroomsList = hotel.vacantBedrooms();
+        assertEquals(2, emptyBedroomsList.size());
+    }
 }
