@@ -13,8 +13,10 @@ public class Hotel {
     }
 
     public void checkInGuestToBedroom(Guest guest, Bedroom bedroom) {
+        if (bedroom.guestCount() == 0) {
        int bedroomIndex = this.bedrooms.indexOf(bedroom);
        this.bedrooms.get(bedroomIndex).addGuest(guest);
+        }
     }
 
     public Guest checkOutGuestFromBedroom(Guest guest, Bedroom bedroom) {
