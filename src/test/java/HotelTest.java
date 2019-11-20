@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class HotelTest {
 
@@ -20,8 +21,8 @@ public class HotelTest {
     @Before
     public void before(){
 
-        bedroom1 = new Bedroom(23, 2, "Single");
-        bedroom2 = new Bedroom(69, 2, "Double");
+        bedroom1 = new Bedroom(23, 2, "Single", 99);
+        bedroom2 = new Bedroom(69, 2, "Double", 50);
 
         ArrayList<Bedroom> bedrooms = new ArrayList<Bedroom>();
         bedrooms.add(bedroom1);
@@ -65,5 +66,11 @@ public class HotelTest {
         hotel.checkInGuestToConferenceRoom(guest1, conferenceRoom1);
         hotel.checkOutGuestFromConferenceRoom(guest1, conferenceRoom1);
         assertEquals(0, conferenceRoom1.guestCount());
+    }
+
+    @Test
+    public void canBookRoom(){
+        Booking newBooking = hotel.bookRoom(3, bedroom1);
+        assertEquals(3, newBooking.hasDurationOfStay());
     }
 }

@@ -28,7 +28,13 @@ public class Hotel {
     }
 
     public Guest checkOutGuestFromConferenceRoom(Guest guest, ConferenceRoom conferenceRoom) {
-        int conferenceRoomIndex = this.conferenceRooms.indexOf(conferenceRoom);
-        return this.conferenceRooms.get(conferenceRoomIndex).removeGuest(guest);
+//        int conferenceRoomIndex = this.conferenceRooms.indexOf(conferenceRoom);
+//        return this.conferenceRooms.get(conferenceRoomIndex).removeGuest(guest);
+        return conferenceRoom.removeGuest(guest);
+    }
+
+    public Booking bookRoom(int durationOfStay, Bedroom bedroom) {
+        Booking newBooking = new Booking(durationOfStay, bedroom);
+        return newBooking;
     }
 }

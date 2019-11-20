@@ -10,7 +10,7 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(101, 2, "Double");
+        bedroom = new Bedroom(101, 2, "Double", 99);
         guest = new Guest("Simone");
     }
 
